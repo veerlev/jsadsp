@@ -1,0 +1,27 @@
+function palindrome(str) {
+  str = cleanUp(str);
+var length = str.length;
+  for (var i = 0; i < length / 2; i++){
+    if (str.charAt(i) 
+    !== str.charAt(length - i - 1)){
+      return false;
+    }
+  }
+return true;
+}
+
+function cleanUp(str){
+var length = str.length;
+str = str.toLowerCase();
+var cleanStr = "";
+for (var i = 0; i < length; i++){
+  var char = str.charAt(i);
+  var isAlphaNumeric = (char >= 'a' && char <= 'z') || (char >= '0' && char <= '9');
+  if (isAlphaNumeric){
+    console.log("\'" + char + "\'");
+    cleanStr += char;
+  }
+}
+console.log(cleanStr);
+return cleanStr;
+}
